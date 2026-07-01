@@ -1,0 +1,42 @@
+{
+  "name": "@sozialhelden/transit-model",
+  "version": "0.1.0",
+  "description": "Public minimal data model (field names + descriptions + table metadata) for Wheelmap Transit (Elevator, StopPlace, StatusSpan, SchemaOrganization).",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./types": {
+      "types": "./dist/types.d.ts",
+      "default": "./dist/types.js"
+    },
+    "./tables": {
+      "types": "./dist/tables.d.ts",
+      "default": "./dist/tables.js"
+    }
+  },
+  "files": [
+    "dist",
+    "docs",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && npm run docs:build",
+    "docs:build": "typedoc --options typedoc.json"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "devDependencies": {
+    "typedoc": "^0.28.0",
+    "typedoc-plugin-markdown": "^4.4.0",
+    "typescript": "^5.9.0"
+  }
+}

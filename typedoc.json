@@ -1,0 +1,10 @@
+{
+  "entryPoints": ["src/index.ts"],
+  "out": "docs",
+  "plugin": ["typedoc-plugin-markdown"],
+  "readme": "none",
+  "excludeExternals": true,
+  "exclude": ["**/node_modules/**/*", "**/dist/**/*"],
+  "githubPages": false,
+  "cleanOutputDir": true
+}
