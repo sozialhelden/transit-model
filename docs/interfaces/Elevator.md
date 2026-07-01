@@ -6,7 +6,7 @@
 
 # Interface: Elevator
 
-Defined in: types.ts:35
+Defined in: [types.ts:35](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L35)
 
 Link elevator infos across data source boundaries.
 
@@ -19,7 +19,7 @@ via the `definition` "elevators".
 
 > `optional` **capacity\_persons?**: `number` \| `null`
 
-Defined in: types.ts:126
+Defined in: [types.ts:126](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L126)
 
 ***
 
@@ -27,7 +27,7 @@ Defined in: types.ts:126
 
 > `optional` **function?**: `object`
 
-Defined in: types.ts:41
+Defined in: [types.ts:41](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L41)
 
 Where does this elevator go? Description of the elevator function from the passenger perspective.
 
@@ -61,7 +61,7 @@ Short description of the elevator function, e.g. ‘basement ↔ ground floor �
 
 > `optional` **holiday\_region?**: `object`
 
-Defined in: types.ts:68
+Defined in: [types.ts:68](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L68)
 
 Determines which public holidays apply. Uses the elevator/site location to select regional holidays.
 
@@ -95,7 +95,7 @@ Next public holidays for the configured region (90 days ahead).
 
 > **id**: `number`
 
-Defined in: types.ts:36
+Defined in: [types.ts:36](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L36)
 
 ***
 
@@ -103,7 +103,7 @@ Defined in: types.ts:36
 
 > `optional` **internal\_description?**: `string` \| `null`
 
-Defined in: types.ts:120
+Defined in: [types.ts:120](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L120)
 
 ***
 
@@ -111,7 +111,7 @@ Defined in: types.ts:120
 
 > `optional` **linked\_data?**: `object`
 
-Defined in: types.ts:80
+Defined in: [types.ts:80](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L80)
 
 #### alternate\_inventory\_ids?
 
@@ -217,7 +217,7 @@ Code for this elevator, e.g. used in local signage.
 
 > `optional` **location?**: `object`
 
-Defined in: types.ts:52
+Defined in: [types.ts:52](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L52)
 
 Where is this elevator located? Description of the elevator location from the passenger perspective.
 
@@ -255,7 +255,7 @@ The site where this elevator is located.
 
 > `optional` **nearby?**: `object`
 
-Defined in: types.ts:116
+Defined in: [types.ts:116](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L116)
 
 #### same\_stop\_place\_elevators?
 
@@ -269,7 +269,7 @@ Other elevator records linked to the same stop place via the “Site” relation
 
 > `optional` **now\_open?**: `boolean` \| `null`
 
-Defined in: types.ts:66
+Defined in: [types.ts:66](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L66)
 
 Automatically calculated based on opening hours, current time, and regional public holidays.
 
@@ -279,7 +279,7 @@ Automatically calculated based on opening hours, current time, and regional publ
 
 > `optional` **number\_of\_doors?**: `"1"` \| `"2"` \| `null`
 
-Defined in: types.ts:127
+Defined in: [types.ts:127](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L127)
 
 ***
 
@@ -287,7 +287,7 @@ Defined in: types.ts:127
 
 > `optional` **opening\_hours?**: `string` \| `null`
 
-Defined in: types.ts:64
+Defined in: [types.ts:64](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L64)
 
 Example: "Mo-Fr 06:00-22:00; Sa-Su 08:00-20:00; PH off". OSM-compatible format. Use "PH off" to close on public holidays. https://openingh.openstreetmap.de/evaluation_tool/
 
@@ -297,7 +297,7 @@ Example: "Mo-Fr 06:00-22:00; Sa-Su 08:00-20:00; PH off". OSM-compatible format. 
 
 > `optional` **operational\_status?**: `object`
 
-Defined in: types.ts:37
+Defined in: [types.ts:37](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L37)
 
 #### operational\_status?
 
@@ -309,7 +309,7 @@ Defined in: types.ts:37
 
 > `optional` **stop\_place\_name?**: `string` \| `null`
 
-Defined in: types.ts:129
+Defined in: [types.ts:129](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L129)
 
 Computed field combining the stop name and description for easier searching.
 
@@ -319,4 +319,4 @@ Computed field combining the stop name and description for easier searching.
 
 > `optional` **url?**: `object`[] \| `null`
 
-Defined in: types.ts:121
+Defined in: [types.ts:121](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L121)

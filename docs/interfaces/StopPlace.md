@@ -6,7 +6,7 @@
 
 # Interface: StopPlace
 
-Defined in: types.ts:138
+Defined in: [types.ts:138](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L138)
 
 A transit-relevant site, station, stop area, or stop place.
 
@@ -19,7 +19,7 @@ via the `definition` "stop-places".
 
 > `optional` **generateSlug?**: `boolean` \| `null`
 
-Defined in: types.ts:169
+Defined in: [types.ts:169](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L169)
 
 When enabled, the slug will auto-generate from the title field on save and autosave.
 
@@ -29,7 +29,7 @@ When enabled, the slug will auto-generate from the title field on save and autos
 
 > `optional` **holiday\_region?**: `object`
 
-Defined in: types.ts:176
+Defined in: [types.ts:176](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L176)
 
 Determines which public holidays apply. Uses the elevator/site location to select regional holidays.
 
@@ -63,7 +63,7 @@ Next public holidays for the configured region (90 days ahead).
 
 > **id**: `number`
 
-Defined in: types.ts:139
+Defined in: [types.ts:139](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L139)
 
 ***
 
@@ -71,7 +71,7 @@ Defined in: types.ts:139
 
 > `optional` **internal\_description?**: `string` \| `null`
 
-Defined in: types.ts:142
+Defined in: [types.ts:142](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L142)
 
 ***
 
@@ -79,7 +79,7 @@ Defined in: types.ts:142
 
 > `optional` **linked\_data?**: `object`
 
-Defined in: types.ts:144
+Defined in: [types.ts:144](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L144)
 
 #### maintenance\_org?
 
@@ -103,7 +103,7 @@ Defined in: types.ts:144
 
 > `optional` **main\_identifier?**: `string` \| `null`
 
-Defined in: types.ts:143
+Defined in: [types.ts:143](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L143)
 
 ***
 
@@ -111,7 +111,7 @@ Defined in: types.ts:143
 
 > `optional` **modes?**: `object`
 
-Defined in: types.ts:188
+Defined in: [types.ts:188](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L188)
 
 #### servicedTransportModes?
 
@@ -125,7 +125,7 @@ Means of transport serviced at this stop place.
 
 > `optional` **normalized\_name?**: `string` \| `null`
 
-Defined in: types.ts:141
+Defined in: [types.ts:141](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L141)
 
 The normalized name of the site, used for display and search purposes.
 
@@ -135,7 +135,7 @@ The normalized name of the site, used for display and search purposes.
 
 > `optional` **normalized\_names?**: `object`
 
-Defined in: types.ts:155
+Defined in: [types.ts:155](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L155)
 
 Preprocessed station names to improve searchability and sorting.
 
@@ -165,7 +165,7 @@ Preprocessed station names to improve searchability and sorting.
 
 > `optional` **now\_open?**: `boolean` \| `null`
 
-Defined in: types.ts:174
+Defined in: [types.ts:174](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L174)
 
 Automatically calculated based on opening hours, current time, and regional public holidays.
 
@@ -175,7 +175,7 @@ Automatically calculated based on opening hours, current time, and regional publ
 
 > `optional` **opening\_hours?**: `string` \| `null`
 
-Defined in: types.ts:172
+Defined in: [types.ts:172](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L172)
 
 Example: "Mo-Fr 06:00-22:00; Sa-Su 08:00-20:00; PH off". OSM-compatible format. Use "PH off" to close on public holidays. https://openingh.openstreetmap.de/evaluation_tool/
 
@@ -185,4 +185,4 @@ Example: "Mo-Fr 06:00-22:00; Sa-Su 08:00-20:00; PH off". OSM-compatible format. 
 
 > **slug**: `string`
 
-Defined in: types.ts:170
+Defined in: [types.ts:170](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L170)
