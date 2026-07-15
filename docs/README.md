@@ -12,11 +12,14 @@
 - [StatusSpan](interfaces/StatusSpan.md)
 - [StopPlace](interfaces/StopPlace.md)
 - [TableModel](interfaces/TableModel.md)
+- [TransitMode](interfaces/TransitMode.md)
 
 ## Type Aliases
 
 - [ElevatorId](type-aliases/ElevatorId.md)
+- [GtfsLevelId](type-aliases/GtfsLevelId.md)
 - [GtfsStopId](type-aliases/GtfsStopId.md)
+- [IconId](type-aliases/IconId.md)
 - [IconographyId](type-aliases/IconographyId.md)
 - [Id](type-aliases/Id.md)
 - [MediaId](type-aliases/MediaId.md)

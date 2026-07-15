@@ -6,7 +6,7 @@
 
 # Interface: SchemaOrganization
 
-Defined in: [types.ts:236](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L236)
+Defined in: [types.ts:266](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L266)
 
 This interface was referenced by `Config`'s JSON-Schema
 via the `definition` "schema-organizations".
@@ -17,7 +17,7 @@ via the `definition` "schema-organizations".
 
 > `optional` **\_autoSuggestion?**: `object`
 
-Defined in: [types.ts:358](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L358)
+Defined in: [types.ts:392](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L392)
 
 #### appliedAt?
 
@@ -41,7 +41,7 @@ Defined in: [types.ts:358](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **acLegacySourceIds?**: `string`[] \| `null`
 
-Defined in: [types.ts:357](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L357)
+Defined in: [types.ts:391](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L391)
 
 MongoDB source _id values from the old accessibility.cloud database that belong to this organization.
 
@@ -51,7 +51,7 @@ MongoDB source _id values from the old accessibility.cloud database that belong 
 
 > `optional` **address?**: `object`
 
-Defined in: [types.ts:249](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L249)
+Defined in: [types.ts:279](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L279)
 
 #### addressCountry?
 
@@ -79,7 +79,7 @@ Defined in: [types.ts:249](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **alternateName?**: `object`[] \| `null`
 
-Defined in: [types.ts:240](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L240)
+Defined in: [types.ts:270](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L270)
 
 ***
 
@@ -87,7 +87,7 @@ Defined in: [types.ts:240](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **belongs\_to\_transit\_network?**: [`SchemaOrganizationId`](../type-aliases/SchemaOrganizationId.md) \| `SchemaOrganization` \| `null`
 
-Defined in: [types.ts:267](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L267)
+Defined in: [types.ts:297](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L297)
 
 ***
 
@@ -95,7 +95,7 @@ Defined in: [types.ts:267](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **branding?**: `object`
 
-Defined in: [types.ts:304](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L304)
+Defined in: [types.ts:338](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L338)
 
 #### darkAccentColor?
 
@@ -227,7 +227,7 @@ Auto-filled with the SVGO-optimized SVG markup when an SVG logo is uploaded.
 
 > `optional` **contactPoint?**: `object`[] \| `null`
 
-Defined in: [types.ts:258](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L258)
+Defined in: [types.ts:288](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L288)
 
 ***
 
@@ -235,7 +235,7 @@ Defined in: [types.ts:258](https://github.com/sozialhelden/transit-model/blob/d5
 
 > **country**: `string`
 
-Defined in: [types.ts:257](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L257)
+Defined in: [types.ts:287](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L287)
 
 ISO 3166-1 ALPHA-2, e.g., "UA" (Ukraine), "FR" (France), "US" (United States), "NZ" (New Zealand)
 
@@ -245,7 +245,7 @@ ISO 3166-1 ALPHA-2, e.g., "UA" (Ukraine), "FR" (France), "US" (United States), "
 
 > `optional` **description?**: `string` \| `null`
 
-Defined in: [types.ts:244](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L244)
+Defined in: [types.ts:274](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L274)
 
 ***
 
@@ -253,7 +253,7 @@ Defined in: [types.ts:244](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **generateSlug?**: `boolean` \| `null`
 
-Defined in: [types.ts:247](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L247)
+Defined in: [types.ts:277](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L277)
 
 When enabled, the slug will auto-generate from the title field on save and autosave.
 
@@ -263,7 +263,7 @@ When enabled, the slug will auto-generate from the title field on save and autos
 
 > **id**: `number`
 
-Defined in: [types.ts:237](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L237)
+Defined in: [types.ts:267](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L267)
 
 ***
 
@@ -271,7 +271,7 @@ Defined in: [types.ts:237](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **legalName?**: `string` \| `null`
 
-Defined in: [types.ts:239](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L239)
+Defined in: [types.ts:269](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L269)
 
 ***
 
@@ -279,7 +279,7 @@ Defined in: [types.ts:239](https://github.com/sozialhelden/transit-model/blob/d5
 
 > **name**: `string`
 
-Defined in: [types.ts:238](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L238)
+Defined in: [types.ts:268](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L268)
 
 ***
 
@@ -287,7 +287,7 @@ Defined in: [types.ts:238](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **netexAuthorityRef?**: `string` \| `null`
 
-Defined in: [types.ts:352](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L352)
+Defined in: [types.ts:386](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L386)
 
 ***
 
@@ -295,7 +295,7 @@ Defined in: [types.ts:352](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **notes?**: `string` \| `null`
 
-Defined in: [types.ts:245](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L245)
+Defined in: [types.ts:275](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L275)
 
 ***
 
@@ -303,7 +303,7 @@ Defined in: [types.ts:245](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **operationalStatus?**: `"planned"` \| `"active"` \| `"inactive"` \| `"suspended"` \| `null`
 
-Defined in: [types.ts:264](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L264)
+Defined in: [types.ts:294](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L294)
 
 ***
 
@@ -311,7 +311,7 @@ Defined in: [types.ts:264](https://github.com/sozialhelden/transit-model/blob/d5
 
 > **organizationType**: `"transport_authority"` \| `"public_transport_operator"` \| `"public_transport_operator_national"` \| `"data_publisher"` \| `"technology_provider"` \| `"research_institution"` \| `"government_agency"` \| `"interest_group"`
 
-Defined in: [types.ts:266](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L266)
+Defined in: [types.ts:296](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L296)
 
 ***
 
@@ -319,7 +319,7 @@ Defined in: [types.ts:266](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **osmManufacturerName?**: `string` \| `null`
 
-Defined in: [types.ts:355](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L355)
+Defined in: [types.ts:389](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L389)
 
 ***
 
@@ -327,7 +327,7 @@ Defined in: [types.ts:355](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **osmNetworkName?**: `string` \| `null`
 
-Defined in: [types.ts:354](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L354)
+Defined in: [types.ts:388](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L388)
 
 ***
 
@@ -335,7 +335,7 @@ Defined in: [types.ts:354](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **osmOperatorName?**: `string` \| `null`
 
-Defined in: [types.ts:353](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L353)
+Defined in: [types.ts:387](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L387)
 
 ***
 
@@ -343,7 +343,7 @@ Defined in: [types.ts:353](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **parentOrganization?**: [`SchemaOrganizationId`](../type-aliases/SchemaOrganizationId.md) \| `SchemaOrganization` \| `null`
 
-Defined in: [types.ts:265](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L265)
+Defined in: [types.ts:295](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L295)
 
 ***
 
@@ -351,7 +351,7 @@ Defined in: [types.ts:265](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **preferredIconographies?**: [`IconographyId`](../type-aliases/IconographyId.md)[] \| `null`
 
-Defined in: [types.ts:303](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L303)
+Defined in: [types.ts:337](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L337)
 
 Iconographies this organization prefers, in order.
 
@@ -359,9 +359,9 @@ Iconographies this organization prefers, in order.
 
 ### providedTransportModes?
 
-> `optional` **providedTransportModes?**: [`TransitModeId`](../type-aliases/TransitModeId.md)[] \| `null`
+> `optional` **providedTransportModes?**: ([`TransitModeId`](../type-aliases/TransitModeId.md) \| [`TransitMode`](TransitMode.md))[] \| `null`
 
-Defined in: [types.ts:348](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L348)
+Defined in: [types.ts:382](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L382)
 
 Means of transport this organization provides.
 
@@ -371,7 +371,7 @@ Means of transport this organization provides.
 
 > **slug**: `string`
 
-Defined in: [types.ts:248](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L248)
+Defined in: [types.ts:278](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L278)
 
 ***
 
@@ -379,7 +379,7 @@ Defined in: [types.ts:248](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **status\_templates?**: `object`
 
-Defined in: [types.ts:268](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L268)
+Defined in: [types.ts:298](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L298)
 
 #### demolition\_generic?
 
@@ -444,6 +444,22 @@ Defined in: [types.ts:268](https://github.com/sozialhelden/transit-model/blob/d5
 #### not\_monitored\_with\_location\_short?
 
 > `optional` **not\_monitored\_with\_location\_short?**: `string` \| `null`
+
+#### operation\_paused\_generic?
+
+> `optional` **operation\_paused\_generic?**: `string` \| `null`
+
+#### operation\_paused\_generic\_short?
+
+> `optional` **operation\_paused\_generic\_short?**: `string` \| `null`
+
+#### operation\_paused\_with\_location?
+
+> `optional` **operation\_paused\_with\_location?**: `string` \| `null`
+
+#### operation\_paused\_with\_location\_short?
+
+> `optional` **operation\_paused\_with\_location\_short?**: `string` \| `null`
 
 #### renovation\_generic?
 
@@ -515,7 +531,7 @@ Defined in: [types.ts:268](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **transportModes?**: (`"bus"` \| `"tram"` \| `"metro"` \| `"rail"` \| `"ferry"` \| `"cable_car"` \| `"funicular"` \| `"monorail"` \| `"aerial_lift"` \| `"shared_mobility"` \| `"e_scooter"` \| `"bike"` \| `"car"`)[] \| `null`
 
-Defined in: [types.ts:346](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L346)
+Defined in: [types.ts:380](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L380)
 
 ***
 
@@ -523,7 +539,7 @@ Defined in: [types.ts:346](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **url?**: `string` \| `null`
 
-Defined in: [types.ts:349](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L349)
+Defined in: [types.ts:383](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L383)
 
 ***
 
@@ -531,6 +547,6 @@ Defined in: [types.ts:349](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **wikidataId?**: `string` \| `null`
 
-Defined in: [types.ts:351](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L351)
+Defined in: [types.ts:385](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L385)
 
 Link to the corresponding Wikidata entity (e.g., https://www.wikidata.org/entity/Q12345).

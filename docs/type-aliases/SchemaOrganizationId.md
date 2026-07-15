@@ -8,4 +8,4 @@
 
 > **SchemaOrganizationId** = [`Id`](Id.md)\<`"SchemaOrganization"`\>
 
-Defined in: [types.ts:24](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L24)
+Defined in: [types.ts:26](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L26)

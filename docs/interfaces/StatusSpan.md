@@ -6,7 +6,7 @@
 
 # Interface: StatusSpan
 
-Defined in: [types.ts:200](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L200)
+Defined in: [types.ts:223](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L223)
 
 An elevator's operational status in a specified time range.
 
@@ -19,7 +19,7 @@ via the `definition` "status-spans".
 
 > `optional` **closed\_by\_incoming\_status\_spans?**: `boolean` \| `null`
 
-Defined in: [types.ts:214](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L214)
+Defined in: [types.ts:237](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L237)
 
 If enabled, new incoming status spans that start within the time range of this status span will automatically end this status span at their start date.
 
@@ -29,7 +29,7 @@ If enabled, new incoming status spans that start within the time range of this s
 
 > `optional` **description?**: `string` \| `null`
 
-Defined in: [types.ts:229](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L229)
+Defined in: [types.ts:252](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L252)
 
 Passenger-facing status text. Filled with the operator's own text when ingested, otherwise generated from the organization's status templates on save. Editable.
 
@@ -39,7 +39,7 @@ Passenger-facing status text. Filled with the operator's own text when ingested,
 
 > `optional` **elevator?**: ([`ElevatorId`](../type-aliases/ElevatorId.md) \| [`Elevator`](Elevator.md))[] \| `null`
 
-Defined in: [types.ts:204](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L204)
+Defined in: [types.ts:227](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L227)
 
 Change the location to show different elevators.
 
@@ -49,7 +49,7 @@ Change the location to show different elevators.
 
 > `optional` **end\_date?**: `string` \| `null`
 
-Defined in: [types.ts:206](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L206)
+Defined in: [types.ts:229](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L229)
 
 ***
 
@@ -57,7 +57,7 @@ Defined in: [types.ts:206](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **external\_reference\_id?**: `string` \| `null`
 
-Defined in: [types.ts:222](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L222)
+Defined in: [types.ts:245](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L245)
 
 ***
 
@@ -65,7 +65,7 @@ Defined in: [types.ts:222](https://github.com/sozialhelden/transit-model/blob/d5
 
 > **id**: `number`
 
-Defined in: [types.ts:201](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L201)
+Defined in: [types.ts:224](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L224)
 
 ***
 
@@ -73,7 +73,31 @@ Defined in: [types.ts:201](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **is\_planned?**: `"planned"` \| `"unplanned"` \| `null`
 
-Defined in: [types.ts:208](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L208)
+Defined in: [types.ts:231](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L231)
+
+***
+
+### location?
+
+> `optional` **location?**: `object`
+
+Defined in: [types.ts:253](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L253)
+
+#### centroid?
+
+> `optional` **centroid?**: \[`number`, `number`\] \| `null`
+
+#### elevatorCentroid?
+
+> `optional` **elevatorCentroid?**: \[`number`, `number`\] \| `null`
+
+Read-only: centroid of the related location, computed on read.
+
+#### stopPlaceCentroid?
+
+> `optional` **stopPlaceCentroid?**: \[`number`, `number`\] \| `null`
+
+Read-only: centroid of the related location, computed on read.
 
 ***
 
@@ -81,7 +105,7 @@ Defined in: [types.ts:208](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **operational\_status?**: `"out_of_service"` \| `"unknown"` \| `"operational"` \| `null`
 
-Defined in: [types.ts:207](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L207)
+Defined in: [types.ts:230](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L230)
 
 ***
 
@@ -89,7 +113,7 @@ Defined in: [types.ts:207](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **origin\_type?**: `"operator_reported"` \| `"from_feed"` \| `"manual_entry"` \| `"sensor_detected"` \| `"user_reported"` \| `null`
 
-Defined in: [types.ts:210](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L210)
+Defined in: [types.ts:233](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L233)
 
 ***
 
@@ -97,7 +121,7 @@ Defined in: [types.ts:210](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **original\_data?**: `string` \| `number` \| `boolean` \| `unknown`[] \| \{\[`k`: `string`\]: `unknown`; \} \| `null`
 
-Defined in: [types.ts:225](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L225)
+Defined in: [types.ts:248](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L248)
 
 ***
 
@@ -105,7 +129,7 @@ Defined in: [types.ts:225](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **original\_elevator\_id?**: `string` \| `null`
 
-Defined in: [types.ts:224](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L224)
+Defined in: [types.ts:247](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L247)
 
 ***
 
@@ -113,7 +137,7 @@ Defined in: [types.ts:224](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **original\_site\_id?**: `string` \| `null`
 
-Defined in: [types.ts:223](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L223)
+Defined in: [types.ts:246](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L246)
 
 ***
 
@@ -121,7 +145,7 @@ Defined in: [types.ts:223](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **pinned?**: `boolean` \| `null`
 
-Defined in: [types.ts:212](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L212)
+Defined in: [types.ts:235](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L235)
 
 If enabled, this status span will be pinned and given priority over other status spans.
 
@@ -129,9 +153,9 @@ If enabled, this status span will be pinned and given priority over other status
 
 ### reason\_type?
 
-> `optional` **reason\_type?**: `"maintenance"` \| `"failure"` \| `"under_construction"` \| `"demolition"` \| `"renovation"` \| `"vandalism"` \| `"sensor_jitter"` \| `"not_monitored"` \| `null`
+> `optional` **reason\_type?**: `"maintenance"` \| `"failure"` \| `"under_construction"` \| `"demolition"` \| `"renovation"` \| `"vandalism"` \| `"sensor_jitter"` \| `"not_monitored"` \| `"operation_paused"` \| `null`
 
-Defined in: [types.ts:209](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L209)
+Defined in: [types.ts:232](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L232)
 
 ***
 
@@ -139,7 +163,7 @@ Defined in: [types.ts:209](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **related\_spans?**: ([`StatusSpanId`](../type-aliases/StatusSpanId.md) \| `StatusSpan`)[] \| `null`
 
-Defined in: [types.ts:218](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L218)
+Defined in: [types.ts:241](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L241)
 
 Other status spans that are related to this one (linked manually or by feed import logic).
 
@@ -149,7 +173,7 @@ Other status spans that are related to this one (linked manually or by feed impo
 
 > `optional` **reported\_by?**: `string` \| `null`
 
-Defined in: [types.ts:221](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L221)
+Defined in: [types.ts:244](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L244)
 
 ***
 
@@ -157,7 +181,7 @@ Defined in: [types.ts:221](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **site?**: ([`StopPlaceId`](../type-aliases/StopPlaceId.md) \| [`StopPlace`](StopPlace.md))[] \| `null`
 
-Defined in: [types.ts:202](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L202)
+Defined in: [types.ts:225](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L225)
 
 ***
 
@@ -165,7 +189,7 @@ Defined in: [types.ts:202](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **start\_date?**: `string` \| `null`
 
-Defined in: [types.ts:205](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L205)
+Defined in: [types.ts:228](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L228)
 
 ***
 
@@ -173,7 +197,7 @@ Defined in: [types.ts:205](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **superseded\_by?**: [`StatusSpanId`](../type-aliases/StatusSpanId.md) \| `StatusSpan` \| `null`
 
-Defined in: [types.ts:216](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L216)
+Defined in: [types.ts:239](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L239)
 
 The status span that superseded this one (set automatically during imports).
 
@@ -183,6 +207,6 @@ The status span that superseded this one (set automatically during imports).
 
 > `optional` **title?**: `string` \| `null`
 
-Defined in: [types.ts:220](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L220)
+Defined in: [types.ts:243](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L243)
 
 Automatically generated from description and date range.

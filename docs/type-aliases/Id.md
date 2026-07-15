@@ -8,7 +8,7 @@
 
 > **Id**\<`Brand`\> = `number` & `object`
 
-Defined in: [types.ts:15](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L15)
+Defined in: [types.ts:15](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L15)
 
 A branded numeric ID. Assignable to `number`, but tagged with its collection so that
 e.g. a StopPlaceId cannot be passed where a SchemaOrganizationId is expected.

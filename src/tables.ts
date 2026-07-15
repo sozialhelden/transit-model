@@ -28,7 +28,7 @@ export interface TableModel {
   columns: ColumnModel[];
 }
 
-export const tables: Record<'Elevator' | 'StopPlace' | 'StatusSpan' | 'SchemaOrganization', TableModel> = {
+export const tables: Record<'Elevator' | 'StopPlace' | 'StatusSpan' | 'SchemaOrganization' | 'TransitMode', TableModel> = {
   "Elevator": {
     "table": "elevators",
     "columns": [
@@ -41,22 +41,26 @@ export const tables: Record<'Elevator' | 'StopPlace' | 'StatusSpan' | 'SchemaOrg
       {
         "dbColumn": "operational_status_operational_status",
         "sqlType": "enum",
-        "tsType": "'in_service' | 'out_of_service' | 'partially_operational' | 'unknown'",
+        "tsType": "'in_service' | 'out_of_service' | 'unknown'",
         "nullable": true,
         "enumValues": [
           "in_service",
           "out_of_service",
-          "partially_operational",
           "unknown"
         ]
       },
       {
         "dbColumn": "location_site_id",
         "sqlType": "integer",
-        "tsType": "StopPlaceId",
+        "tsType": "number",
         "nullable": true,
-        "references": "StopPlace",
         "description": "The site where this elevator is located."
+      },
+      {
+        "dbColumn": "location_centroid",
+        "sqlType": "geometryColumn",
+        "tsType": "unknown",
+        "nullable": true
       },
       {
         "dbColumn": "opening_hours",
@@ -96,9 +100,8 @@ export const tables: Record<'Elevator' | 'StopPlace' | 'StatusSpan' | 'SchemaOrg
       {
         "dbColumn": "linked_data_operator_org_id",
         "sqlType": "integer",
-        "tsType": "SchemaOrganizationId",
+        "tsType": "number",
         "nullable": true,
-        "references": "SchemaOrganization",
         "description": "Responsible for this elevator's function (may be different from the owner)."
       },
       {
@@ -125,9 +128,8 @@ export const tables: Record<'Elevator' | 'StopPlace' | 'StatusSpan' | 'SchemaOrg
       {
         "dbColumn": "linked_data_owner_org_id",
         "sqlType": "integer",
-        "tsType": "SchemaOrganizationId",
-        "nullable": true,
-        "references": "SchemaOrganization"
+        "tsType": "number",
+        "nullable": true
       },
       {
         "dbColumn": "linked_data_notes",
@@ -169,8 +171,21 @@ export const tables: Record<'Elevator' | 'StopPlace' | 'StatusSpan' | 'SchemaOrg
         "dbColumn": "linked_data_obsoleted",
         "sqlType": "boolean",
         "tsType": "boolean",
+        "nullable": true
+      },
+      {
+        "dbColumn": "linked_data_superseded_by_id",
+        "sqlType": "integer",
+        "tsType": "number",
         "nullable": true,
-        "description": "This elevator record is obsoleted and likely replaced by a newer record from a different data source."
+        "description": "The canonical elevator record that replaces this obsoleted one (e.g. a duplicate folded into the surviving record). Mutually exclusive with 'No replacement planned'."
+      },
+      {
+        "dbColumn": "linked_data_no_replacement_planned",
+        "sqlType": "boolean",
+        "tsType": "boolean",
+        "nullable": true,
+        "description": "This obsoleted elevator is retired with no successor (e.g. it was genuinely removed). Mutually exclusive with 'Superseded by'."
       },
       {
         "dbColumn": "linked_data_needs_review",
@@ -246,6 +261,12 @@ export const tables: Record<'Elevator' | 'StopPlace' | 'StatusSpan' | 'SchemaOrg
         "nullable": true
       },
       {
+        "dbColumn": "serviced_mode_icons",
+        "sqlType": "jsonb",
+        "tsType": "Record<string, unknown>",
+        "nullable": true
+      },
+      {
         "dbColumn": "linked_data_maintenance_org_id",
         "sqlType": "integer",
         "tsType": "SchemaOrganizationId",
@@ -255,9 +276,8 @@ export const tables: Record<'Elevator' | 'StopPlace' | 'StatusSpan' | 'SchemaOrg
       {
         "dbColumn": "linked_data_owner_org_id",
         "sqlType": "integer",
-        "tsType": "SchemaOrganizationId",
-        "nullable": true,
-        "references": "SchemaOrganization"
+        "tsType": "number",
+        "nullable": true
       },
       {
         "dbColumn": "normalized_names_clean_name_db",
@@ -300,6 +320,12 @@ export const tables: Record<'Elevator' | 'StopPlace' | 'StatusSpan' | 'SchemaOrg
         "dbColumn": "slug",
         "sqlType": "varchar",
         "tsType": "string",
+        "nullable": true
+      },
+      {
+        "dbColumn": "centroid",
+        "sqlType": "geometryColumn",
+        "tsType": "unknown",
         "nullable": true
       },
       {
@@ -370,7 +396,7 @@ export const tables: Record<'Elevator' | 'StopPlace' | 'StatusSpan' | 'SchemaOrg
       {
         "dbColumn": "reason_type",
         "sqlType": "enum",
-        "tsType": "'maintenance' | 'failure' | 'under_construction' | 'demolition' | 'renovation' | 'vandalism' | 'sensor_jitter' | 'not_monitored'",
+        "tsType": "'maintenance' | 'failure' | 'under_construction' | 'demolition' | 'renovation' | 'vandalism' | 'sensor_jitter' | 'not_monitored' | 'operation_paused'",
         "nullable": true,
         "enumValues": [
           "maintenance",
@@ -380,7 +406,8 @@ export const tables: Record<'Elevator' | 'StopPlace' | 'StatusSpan' | 'SchemaOrg
           "renovation",
           "vandalism",
           "sensor_jitter",
-          "not_monitored"
+          "not_monitored",
+          "operation_paused"
         ]
       },
       {
@@ -445,6 +472,12 @@ export const tables: Record<'Elevator' | 'StopPlace' | 'StatusSpan' | 'SchemaOrg
         "dbColumn": "original_data",
         "sqlType": "jsonb",
         "tsType": "Record<string, unknown>",
+        "nullable": true
+      },
+      {
+        "dbColumn": "location_centroid",
+        "sqlType": "geometryColumn",
+        "tsType": "unknown",
         "nullable": true
       }
     ]
@@ -610,17 +643,15 @@ export const tables: Record<'Elevator' | 'StopPlace' | 'StatusSpan' | 'SchemaOrg
       {
         "dbColumn": "branding_logo_light_id",
         "sqlType": "integer",
-        "tsType": "MediaId",
+        "tsType": "number",
         "nullable": true,
-        "references": "Media",
         "description": "SVG preferred. Used where the full organization or app name is displayed."
       },
       {
         "dbColumn": "branding_icon_light_id",
         "sqlType": "integer",
-        "tsType": "MediaId",
+        "tsType": "number",
         "nullable": true,
-        "references": "Media",
         "description": "SVG preferred. Squared image for compact contexts (favicons, map markers)."
       },
       {
@@ -675,17 +706,15 @@ export const tables: Record<'Elevator' | 'StopPlace' | 'StatusSpan' | 'SchemaOrg
       {
         "dbColumn": "branding_logo_dark_id",
         "sqlType": "integer",
-        "tsType": "MediaId",
+        "tsType": "number",
         "nullable": true,
-        "references": "Media",
         "description": "SVG preferred. Used where the full organization or app name is displayed."
       },
       {
         "dbColumn": "branding_icon_dark_id",
         "sqlType": "integer",
-        "tsType": "MediaId",
+        "tsType": "number",
         "nullable": true,
-        "references": "Media",
         "description": "SVG preferred. Squared image for compact contexts (favicons, map markers)."
       },
       {
@@ -762,6 +791,24 @@ export const tables: Record<'Elevator' | 'StopPlace' | 'StatusSpan' | 'SchemaOrg
         "sqlType": "timestamp",
         "tsType": "string",
         "nullable": true
+      }
+    ]
+  },
+  "TransitMode": {
+    "table": "transit_modes",
+    "columns": [
+      {
+        "dbColumn": "id",
+        "sqlType": "serial",
+        "tsType": "number",
+        "nullable": false
+      },
+      {
+        "dbColumn": "icon_id",
+        "sqlType": "integer",
+        "tsType": "IconId",
+        "nullable": false,
+        "references": "Icon"
       }
     ]
   }

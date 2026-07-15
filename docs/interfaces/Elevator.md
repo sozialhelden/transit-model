@@ -6,7 +6,7 @@
 
 # Interface: Elevator
 
-Defined in: [types.ts:35](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L35)
+Defined in: [types.ts:37](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L37)
 
 Link elevator infos across data source boundaries.
 
@@ -19,7 +19,7 @@ via the `definition` "elevators".
 
 > `optional` **capacity\_persons?**: `number` \| `null`
 
-Defined in: [types.ts:126](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L126)
+Defined in: [types.ts:145](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L145)
 
 ***
 
@@ -27,7 +27,7 @@ Defined in: [types.ts:126](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **function?**: `object`
 
-Defined in: [types.ts:41](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L41)
+Defined in: [types.ts:52](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L52)
 
 Where does this elevator go? Description of the elevator function from the passenger perspective.
 
@@ -61,7 +61,7 @@ Short description of the elevator function, e.g. ‘basement ↔ ground floor �
 
 > `optional` **holiday\_region?**: `object`
 
-Defined in: [types.ts:68](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L68)
+Defined in: [types.ts:82](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L82)
 
 Determines which public holidays apply. Uses the elevator/site location to select regional holidays.
 
@@ -85,7 +85,7 @@ State or region name for regional holidays (e.g. "Berlin", "Bayern", "Wien")
 
 #### upcoming\_holidays?
 
-> `optional` **upcoming\_holidays?**: `string` \| `number` \| `boolean` \| \{\[`k`: `string`\]: `unknown`; \} \| `unknown`[] \| `null`
+> `optional` **upcoming\_holidays?**: `string` \| `number` \| `boolean` \| `unknown`[] \| \{\[`k`: `string`\]: `unknown`; \} \| `null`
 
 Next public holidays for the configured region (90 days ahead).
 
@@ -95,7 +95,7 @@ Next public holidays for the configured region (90 days ahead).
 
 > **id**: `number`
 
-Defined in: [types.ts:36](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L36)
+Defined in: [types.ts:38](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L38)
 
 ***
 
@@ -103,7 +103,7 @@ Defined in: [types.ts:36](https://github.com/sozialhelden/transit-model/blob/d56
 
 > `optional` **internal\_description?**: `string` \| `null`
 
-Defined in: [types.ts:120](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L120)
+Defined in: [types.ts:139](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L139)
 
 ***
 
@@ -111,13 +111,19 @@ Defined in: [types.ts:120](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **linked\_data?**: `object`
 
-Defined in: [types.ts:80](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L80)
+Defined in: [types.ts:94](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L94)
 
 #### alternate\_inventory\_ids?
 
 > `optional` **alternate\_inventory\_ids?**: `object`[] \| `null`
 
 Known alternative inventory IDs for this elevator.
+
+#### associated\_levels?
+
+> `optional` **associated\_levels?**: [`GtfsLevelId`](../type-aliases/GtfsLevelId.md)[] \| `null`
+
+GTFS levels this elevator connects. Populated from match candidates when a candidate is applied to this elevator.
 
 #### associated\_site?
 
@@ -155,6 +161,12 @@ This elevator record needs review and may require updates or verification.
 
 > `optional` **no\_realtime\_sensors?**: `boolean` \| `null`
 
+#### no\_replacement\_planned?
+
+> `optional` **no\_replacement\_planned?**: `boolean` \| `null`
+
+This obsoleted elevator is retired with no successor (e.g. it was genuinely removed). Mutually exclusive with 'Superseded by'.
+
 #### notes?
 
 > `optional` **notes?**: `string` \| `null`
@@ -162,8 +174,6 @@ This elevator record needs review and may require updates or verification.
 #### obsoleted?
 
 > `optional` **obsoleted?**: `boolean` \| `null`
-
-This elevator record is obsoleted and likely replaced by a newer record from a different data source.
 
 #### operator\_inventory\_id?
 
@@ -207,6 +217,12 @@ The original site identifier from the data source this elevator was imported fro
 
 Code for this elevator, e.g. used in local signage.
 
+#### superseded\_by?
+
+> `optional` **superseded\_by?**: [`ElevatorId`](../type-aliases/ElevatorId.md) \| `Elevator` \| `null`
+
+The canonical elevator record that replaces this obsoleted one (e.g. a duplicate folded into the surviving record). Mutually exclusive with 'No replacement planned'.
+
 #### transit\_networks\_served?
 
 > `optional` **transit\_networks\_served?**: ([`SchemaOrganizationId`](../type-aliases/SchemaOrganizationId.md) \| [`SchemaOrganization`](SchemaOrganization.md))[] \| `null`
@@ -217,9 +233,13 @@ Code for this elevator, e.g. used in local signage.
 
 > `optional` **location?**: `object`
 
-Defined in: [types.ts:52](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L52)
+Defined in: [types.ts:63](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L63)
 
 Where is this elevator located? Description of the elevator location from the passenger perspective.
+
+#### centroid?
+
+> `optional` **centroid?**: \[`number`, `number`\] \| `null`
 
 #### long\_tts?
 
@@ -249,13 +269,19 @@ Short description of the elevator location, e.g. ‘ground floor ↔ 1st floor�
 
 The site where this elevator is located.
 
+#### stopPlaceCentroid?
+
+> `optional` **stopPlaceCentroid?**: \[`number`, `number`\] \| `null`
+
+Read-only: centroid of the related location, computed on read.
+
 ***
 
 ### nearby?
 
 > `optional` **nearby?**: `object`
 
-Defined in: [types.ts:116](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L116)
+Defined in: [types.ts:135](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L135)
 
 #### same\_stop\_place\_elevators?
 
@@ -269,7 +295,7 @@ Other elevator records linked to the same stop place via the “Site” relation
 
 > `optional` **now\_open?**: `boolean` \| `null`
 
-Defined in: [types.ts:66](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L66)
+Defined in: [types.ts:80](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L80)
 
 Automatically calculated based on opening hours, current time, and regional public holidays.
 
@@ -279,7 +305,7 @@ Automatically calculated based on opening hours, current time, and regional publ
 
 > `optional` **number\_of\_doors?**: `"1"` \| `"2"` \| `null`
 
-Defined in: [types.ts:127](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L127)
+Defined in: [types.ts:146](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L146)
 
 ***
 
@@ -287,7 +313,7 @@ Defined in: [types.ts:127](https://github.com/sozialhelden/transit-model/blob/d5
 
 > `optional` **opening\_hours?**: `string` \| `null`
 
-Defined in: [types.ts:64](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L64)
+Defined in: [types.ts:78](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L78)
 
 Example: "Mo-Fr 06:00-22:00; Sa-Su 08:00-20:00; PH off". OSM-compatible format. Use "PH off" to close on public holidays. https://openingh.openstreetmap.de/evaluation_tool/
 
@@ -297,11 +323,35 @@ Example: "Mo-Fr 06:00-22:00; Sa-Su 08:00-20:00; PH off". OSM-compatible format. 
 
 > `optional` **operational\_status?**: `object`
 
-Defined in: [types.ts:37](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L37)
+Defined in: [types.ts:39](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L39)
+
+#### current\_status\_span?
+
+> `optional` **current\_status\_span?**: [`StatusSpanId`](../type-aliases/StatusSpanId.md) \| [`StatusSpan`](StatusSpan.md) \| `null`
+
+The status span that currently determines this elevator's status. Pinned spans win; otherwise the newest active span. Spans starting in the future are ignored. Empty when no span is active.
+
+#### current\_status\_span\_title?
+
+> `optional` **current\_status\_span\_title?**: `string` \| `null`
+
+#### last\_status\_span\_actions?
+
+> `optional` **last\_status\_span\_actions?**: `string` \| `number` \| `boolean` \| \{\[`k`: `string`\]: `unknown`; \} \| `unknown`[] \| `null`
+
+#### latest\_status\_span?
+
+> `optional` **latest\_status\_span?**: [`StatusSpanId`](../type-aliases/StatusSpanId.md) \| [`StatusSpan`](StatusSpan.md) \| `null`
+
+The newest status span for this elevator by start date — even if it lies in the future or is not currently active. Hidden when it is the same as the current status span.
+
+#### latest\_status\_span\_title?
+
+> `optional` **latest\_status\_span\_title?**: `string` \| `null`
 
 #### operational\_status?
 
-> `optional` **operational\_status?**: `"in_service"` \| `"out_of_service"` \| `"partially_operational"` \| `"unknown"` \| `null`
+> `optional` **operational\_status?**: `"in_service"` \| `"out_of_service"` \| `"unknown"` \| `null`
 
 ***
 
@@ -309,7 +359,7 @@ Defined in: [types.ts:37](https://github.com/sozialhelden/transit-model/blob/d56
 
 > `optional` **stop\_place\_name?**: `string` \| `null`
 
-Defined in: [types.ts:129](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L129)
+Defined in: [types.ts:148](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L148)
 
 Computed field combining the stop name and description for easier searching.
 
@@ -319,4 +369,4 @@ Computed field combining the stop name and description for easier searching.
 
 > `optional` **url?**: `object`[] \| `null`
 
-Defined in: [types.ts:121](https://github.com/sozialhelden/transit-model/blob/d56e91565a6bacd9bd7a5d499c4e4b62f67a6c5d/src/types.ts#L121)
+Defined in: [types.ts:140](https://github.com/sozialhelden/transit-model/blob/c678a5dad27639a9ad98b54bd5467e529bc11aec/src/types.ts#L140)
